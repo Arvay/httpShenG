@@ -7,8 +7,6 @@ const server = http.createServer((req, res) => {
     res.end('Hello World\n');
 });
 
-server.prototype.stopServer = function () {
-    http.close(function () {
-        console.log('停止服务器')
-    })
-}
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
